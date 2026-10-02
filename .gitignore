@@ -1,0 +1,31 @@
+(
+echo # Dependencies
+echo node_modules/
+echo.
+echo # Local Python Virtual Environment
+echo frovenv/
+echo.
+echo # Build outputs
+echo dist/
+echo build/
+echo *.tsbuildinfo
+echo.
+echo # Environment files ^(contains sensitive keys/secrets^)
+echo .env
+echo .env.local
+echo .env.development.local
+echo .env.test.local
+echo .env.production.local
+echo.
+echo # Logs
+echo npm-debug.log*
+echo yarn-debug.log*
+echo yarn-error.log*
+echo pnpm-debug.log*
+echo.
+echo # Editor and OS system files
+echo .vscode/
+echo .idea/
+echo .DS_Store
+echo Thumbs.db
+) > .gitignore

@@ -1,0 +1,83 @@
+/* Google Font import kept for parity with the Recruiter module's index.css
+   (also declared via <link> tags in index.html; harmless to keep both). */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------
+   Base resets — merged from Landing & Admin modules' index.css
+   ------------------------------------------------------------------- */
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+}
+
+/* -------------------------------------------------------------------
+   Body typography/background — merged from Auth / Job Seeker /
+   Recruiter modules' index.css. Each page's own root element (e.g.
+   LandingPage's "bg-surface", AuthPage's flex layout, JobSeekerApp's
+   own background) still governs the actual per-portal look; this is
+   just the shared fallback.
+   ------------------------------------------------------------------- */
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+/* -------------------------------------------------------------------
+   Auth module's glass-morphism utility classes (used by BrandPanel.jsx)
+   ------------------------------------------------------------------- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card-stat {
+  background: rgba(15, 36, 66, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* -------------------------------------------------------------------
+   Scrollbar styling — merged from Landing / Job Seeker / Recruiter /
+   Admin modules. Landing hides the scrollbar entirely; the others
+   style a thin one. We keep both: the thin styled scrollbar globally,
+   and the `.custom-scrollbar` utility class (Job Seeker) for any
+   container that wants the same thin styling explicitly.
+   ------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
